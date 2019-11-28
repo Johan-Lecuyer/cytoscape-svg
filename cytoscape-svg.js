@@ -211,7 +211,7 @@ function output(canvas) {
   return canvas.getSerializedSvg();
 }
 
-CRp.svg = function (options) {
+CRp.exportSvg = function (options) {
   return output(CRp.bufferCanvasImage(options || {}, this));
 };
 
@@ -232,7 +232,7 @@ var register = function register(cytoscape) {
     return;
   } // can't register if cytoscape unspecified
 
-  cytoscape('core', 'svg', impl.svg); // register with cytoscape.js
+  cytoscape('core', 'exportSvg', impl.exportSvg); // register with cytoscape.js
 };
 
 if (typeof cytoscape !== 'undefined') {

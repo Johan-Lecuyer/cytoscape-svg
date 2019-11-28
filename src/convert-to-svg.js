@@ -121,7 +121,7 @@ function output(canvas){
     return canvas.getSerializedSvg();
 }
 
-CRp.svg = function( options ){
+CRp.exportSvg = function( options ){
   return output(CRp.bufferCanvasImage(options || {}, this ));
 };
 
